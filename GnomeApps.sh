@@ -10,3 +10,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # Oh My Bash
 sudo apt install git -yy
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+# installing Other Apps 
+sudo apt install vlc micro libreoffice tilix  -yy
+sudo apt purge nano gnome-terminal -yy
+sudo apt autoremove
