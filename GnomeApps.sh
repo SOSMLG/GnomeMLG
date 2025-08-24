@@ -11,7 +11,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo apt install git -yy
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
 # installing Other Apps 
-sudo apt install vlc micro libreoffice tilix fastfetch  unrar unzip cargo p7zip ntfs-3g  ffmpeg ttf-mscorefonts-installer fonts-firacode fonts-jetbrains-mono fonts-croscore fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto fonts-noto-cjk extrepo -yy
+sudo apt install vlc micro libreoffice tilix fastfetch unzip cargo p7zip ntfs-3g  ffmpeg fonts-firacode fonts-jetbrains-mono fonts-croscore fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto fonts-noto-cjk extrepo -yy
 sudo apt purge nano gnome-terminal firefox-esr -yy
 sudo apt autoremove
 # librewolf
