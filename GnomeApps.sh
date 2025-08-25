@@ -33,4 +33,3 @@ micro -plugin install detectindent
 micro -plugin install linter        
 micro -plugin install go            
 micro -plugin install fish
-micro -plugin install shell
