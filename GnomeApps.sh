@@ -1,6 +1,8 @@
 #BackPorts For Trixie 
 "deb http://deb.debian.org/debian/ trixie-backports main non-free-firmware"
 "deb-src http://deb.debian.org/debian/ trixie-backports main non-free-firmware"
+# 32 Bit Architecture Support
+sudo dpkg --add-architecture i386
 # flatpack configuration 
 sudo apt update -yy
 sudo apt upgrade -yy
@@ -17,3 +19,8 @@ sudo apt autoremove
 # librewolf
 sudo extrepo enable librewolf 
 sudo apt update && sudo apt install librewolf -y
+#fonts 
+git clone https://github.com/powerline/fonts.git 
+cd fonts   
+./install.sh    
+sudo fc-cache -fv    
