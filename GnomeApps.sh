@@ -13,7 +13,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo apt install git -yy
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
 # installing Other Apps 
-sudo apt install vlc micro libreoffice tilix fastfetch unzip cargo p7zip ntfs-3g  ffmpeg fonts-firacode fonts-jetbrains-mono fonts-croscore fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto fonts-noto-cjk extrepo -yy
+sudo apt install vlc micro libreoffice tilix fastfetch unzip cargo p7zip ntfs-3g eza zoxide vlc gimp fzf ffmpeg fonts-firacode fonts-jetbrains-mono fonts-croscore fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto fonts-noto-cjk extrepo -yy
 sudo apt purge nano gnome-terminal firefox-esr -yy
 sudo apt autoremove
 # librewolf
@@ -23,4 +23,14 @@ sudo apt update && sudo apt install librewolf -y
 git clone https://github.com/powerline/fonts.git 
 cd fonts   
 ./install.sh    
-sudo fc-cache -fv    
+sudo fc-cache -fv 
+#micro plugins 
+micro -plugin install filemanager  
+micro -plugin install fzf           
+micro -plugin install quoter        
+micro -plugin install autoclose     
+micro -plugin install detectindent  
+micro -plugin install linter        
+micro -plugin install go            
+micro -plugin install fish
+micro -plugin install shell
