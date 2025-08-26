@@ -33,3 +33,7 @@ micro -plugin install detectindent
 micro -plugin install linter        
 micro -plugin install go            
 micro -plugin install fish
+#pipx 
+sudo apt install pipx 
+pipx install pywal 
+pipx ensurepath
