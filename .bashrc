@@ -157,24 +157,4 @@ source "$OSH"/oh-my-bash.sh
 # users are encouraged to define aliases within the OSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# aliases
-alias e='micro'
-alias bashrc='nano ~/.bashrc && source ~/.bashrc'
-alias reload='source ~/.bashrc'
-alias ls='eza --icons'
-alias ll='eza -alh --icons --group-directories-first'
-alias la='eza -a --icons'
-alias lt='eza -alh --sort=modified --icons'
-alias tree='eza --tree --icons'
-alias ..='z ..'
-alias ...='z ../..'
-alias ....='z ../../..'
-alias -- -='z -'     
 
-# Created by `pipx` on 2025-08-26 20:54:56
-export PATH="$PATH:/home/sosmlg/.local/bin"
-#pywal
-x=`gsettings get org.gnome.desktop.background picture-uri | wc -c`
-y=$((x-2))
-wall_length=`gsettings get org.gnome.desktop.background picture-uri | cut -c 9-$y`
-wal -q -i $wall_length
