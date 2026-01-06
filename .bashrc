@@ -113,8 +113,6 @@ plugins=(
   git
   sudo
   colored-man-pages
-  zoxide
-  fzf 
 )
 
 # Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
