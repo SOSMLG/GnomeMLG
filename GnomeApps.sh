@@ -1,35 +1,7 @@
-#BackPorts For Trixie 
-"deb http://deb.debian.org/debian/ trixie-backports main non-free-firmware"
-"deb-src http://deb.debian.org/debian/ trixie-backports main non-free-firmware"
 # 32 Bit Architecture Support
 sudo dpkg --add-architecture i386
-# flatpack configuration 
-sudo apt update -yy
-sudo apt upgrade -yy
-sudo apt install flatpak -yy
-sudo apt install gnome-software-plugin-flatpak -yy
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 # Oh My Bash
 sudo apt install git -yy
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
-# installing Other Apps 
-sudo apt install vlc micro libreoffice  fastfetch unzip cargo p7zip ntfs-3g eza zoxide vlc gimp imagemagick fzf ffmpeg fonts-firacode fonts-jetbrains-mono fonts-croscore fonts-crosextra-carlito fonts-crosextra-caladea fonts-noto fonts-noto-cjk  -yy
-sudo apt autoremove
-#fonts 
-git clone https://github.com/powerline/fonts.git 
-cd fonts   
-./install.sh    
-sudo fc-cache -fv 
-#micro plugins 
-micro -plugin install filemanager  
-micro -plugin install fzf           
-micro -plugin install quoter        
-micro -plugin install autoclose     
-micro -plugin install detectindent  
-micro -plugin install linter        
-micro -plugin install go            
-micro -plugin install fish
-#pipx 
-sudo apt install pipx 
-pipx install pywal 
-pipx ensurepath
+#
+
