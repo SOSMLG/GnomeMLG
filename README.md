@@ -1,14 +1,17 @@
+![banner](assets/banner.svg)
+
 # GNOME MLG
 
-![Debian](https://img.shields.io/badge/Debian-supported-202329?logo=debian&logoColor=E8A33D)
-![Devuan](https://img.shields.io/badge/Devuan-supported-202329?logo=devuan&logoColor=E8A33D)
-![GNOME](https://img.shields.io/badge/Desktop-GNOME-202329?logo=gnome&logoColor=E8A33D)
-![License: MIT](https://img.shields.io/badge/License-MIT-8FB57A.svg)
+deploys a portable bash config and stages a graphite amber theme archive for a small gnome desktop on debian or devuan.
 
-A small GNOME setup kit with a Graphite Amber visual identity. It deploys a
-portable bash config, installs the few prerequisites this desktop expects, and
-stages the bundled Graphite Amber theme archive. Everything runs as a normal
-user and escalates only the commands that need it.
+[read the quick start](#quick-start)
+
+| | |
+| --- | --- |
+| **bash** | copies `configs/bash/.bashrc` to `~/.bashrc` and keeps a timestamped backup. |
+| **apps** | enables i386, installs git and wget when missing, and installs oh-my-bash when absent. |
+| **theme** | stages `graphite-amber-theme.7z` and extracts it when 7z is present. |
+| **verify** | `./run.sh --verify` reads current state only. |
 
 ## Quick start
 
