@@ -1,13 +1,14 @@
 # GNOME MLG
 
-![Debian](https://img.shields.io/badge/Debian-supported-A81D33?logo=debian&logoColor=white)
-![Devuan](https://img.shields.io/badge/Devuan-supported-9B183E?logo=devuan&logoColor=white)
-![GNOME](https://img.shields.io/badge/Desktop-GNOME-3B8EE9?logo=gnome&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Debian](https://img.shields.io/badge/Debian-supported-202329?logo=debian&logoColor=E8A33D)
+![Devuan](https://img.shields.io/badge/Devuan-supported-202329?logo=devuan&logoColor=E8A33D)
+![GNOME](https://img.shields.io/badge/Desktop-GNOME-202329?logo=gnome&logoColor=E8A33D)
+![License: MIT](https://img.shields.io/badge/License-MIT-8FB57A.svg)
 
-A small GNOME setup kit. It deploys a portable bash config, installs the few
-prerequisites this desktop expects, and stages the bundled theme archive.
-Everything runs as a normal user and escalates only the commands that need it.
+A small GNOME setup kit with a Graphite Amber visual identity. It deploys a
+portable bash config, installs the few prerequisites this desktop expects, and
+stages the bundled Graphite Amber theme archive. Everything runs as a normal
+user and escalates only the commands that need it.
 
 ## Quick start
 
@@ -34,7 +35,7 @@ For a step-by-step run:
 |---|---|
 | `bash` | Copies `configs/bash/.bashrc` to `~/.bashrc`, keeping a timestamped backup. The config uses `$HOME` instead of a fixed username. |
 | `apps` | Enables the `i386` architecture, installs `git` and `wget` when missing, and installs oh-my-bash from its upstream installer when `~/.oh-my-bash` is absent. |
-| `theme` | Copies `theming.7z` into `$XDG_DATA_HOME/gnome-mlg` (default `~/.local/share/gnome-mlg`). If 7z is installed, it backs up `~/.themes` and extracts the archive there. Otherwise it tells you where to extract it manually. |
+| `theme` | Copies `graphite-amber-theme.7z` into `$XDG_DATA_HOME/gnome-mlg` (default `~/.local/share/gnome-mlg`). If 7z is installed, it backs up `~/.themes` and extracts the archive there. Otherwise it tells you where to extract it manually. |
 
 The app step never upgrades the whole system and never runs as root. Package
 names are checked before install, so steps are safe to re-run.
@@ -80,7 +81,7 @@ verify.sh                  read-only end-state verifier
 scripts/lib/common.sh      shared helpers (priv, logging, backups)
 configs/bash/.bashrc       portable bash config
 configs/gnome/GnomeApps.sh app prerequisite step
-theming.7z                 bundled theme archive
+graphite-amber-theme.7z                 bundled theme archive
 AGENTS.md                  project conventions
 ```
 
@@ -97,4 +98,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Repository standard
 
-This repo follows the SOSMLG standard: [contributing](CONTRIBUTING.md), [security](SECURITY.md), [changelog](CHANGELOG.md). Local workflow: [English guide](https://github.com/SOSMLG/.github/blob/main/docs/GIT_GUIDE.md) / [Arabic guide](https://github.com/SOSMLG/.github/blob/main/docs/GIT_GUIDE.ar.md).
+This repo follows the SOSMLG standard: [contributing](CONTRIBUTING.md), [security](SECURITY.md), [changelog](CHANGELOG.md). Local workflow: [English guide](https://github.com/SOSMLG/.github/blob/main/docs/GIT_GUIDE.md) / [Arabic guide](https://github.com/SOSMLG/.github/blob/main/docs/GIT_GUIDE.ar.md). Visual standard: [theme](https://github.com/SOSMLG/.github/blob/main/docs/THEME.md) / [الطابع البصري](https://github.com/SOSMLG/.github/blob/main/docs/THEME.ar.md).

@@ -82,14 +82,14 @@ run_apps() {
 }
 
 run_theme() {
-    local archive="$SCRIPT_DIR/theming.7z"
+    local archive="$SCRIPT_DIR/graphite-amber-theme.7z"
     [ -f "$archive" ] || { log_err "missing $archive"; return 1; }
-    ask "Stage and apply the bundled theming.7z?" || return 0
+    ask "Stage and apply the bundled graphite-amber-theme.7z?" || return 0
     mkdir -p "$GNOMEMLG_DATA_DIR"
-    cp "$archive" "$GNOMEMLG_DATA_DIR/theming.7z"
+    cp "$archive" "$GNOMEMLG_DATA_DIR/graphite-amber-theme.7z"
     log_ok "staged theme archive in $GNOMEMLG_DATA_DIR"
     if ! command_exists 7z; then
-        log_warn "7z not installed; extract $GNOMEMLG_DATA_DIR/theming.7z manually"
+        log_warn "7z not installed; extract $GNOMEMLG_DATA_DIR/graphite-amber-theme.7z manually"
         return 0
     fi
     if [ -d "$HOME/.themes" ]; then

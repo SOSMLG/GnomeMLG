@@ -38,7 +38,7 @@ check_file() {
 
 check_file "repo-bash-config" "$SCRIPT_DIR/configs/bash/.bashrc"
 check_file "repo-app-step" "$SCRIPT_DIR/configs/gnome/GnomeApps.sh"
-check_file "theme-archive" "$SCRIPT_DIR/theming.7z"
+check_file "theme-archive" "$SCRIPT_DIR/graphite-amber-theme.7z"
 
 if grep -Fq 'export OSH="$HOME/.oh-my-bash"' "$SCRIPT_DIR/configs/bash/.bashrc" 2>/dev/null; then
     report PASS "portable-bashrc" "config uses \$HOME for OSH"
@@ -58,7 +58,7 @@ else
     report WARN "oh-my-bash" "$HOME/.oh-my-bash is not installed"
 fi
 
-if [ -f "$GNOMEMLG_DATA_DIR/theming.7z" ]; then
+if [ -f "$GNOMEMLG_DATA_DIR/graphite-amber-theme.7z" ]; then
     report PASS "staged-theme" "theme archive is staged in $GNOMEMLG_DATA_DIR"
 else
     report WARN "staged-theme" "theme archive is not staged yet"
