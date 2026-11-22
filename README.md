@@ -10,7 +10,7 @@ deploys a portable bash config and stages a graphite amber theme archive for a s
 | --- | --- |
 | **bash** | copies `configs/bash/.bashrc` to `~/.bashrc` and keeps a timestamped backup. |
 | **apps** | enables i386, installs git and wget when missing, and installs oh-my-bash when absent. |
-| **theme** | stages `graphite-amber-theme.7z` and extracts it when 7z is present. |
+| **theme** | stages `graphite-amber-theme.7z`, extracts the real Graphite Amber GTK/Shell/Metacity theme, and applies it with `gsettings` when available. |
 | **verify** | `./run.sh --verify` reads current state only. |
 
 ## Quick start
@@ -38,7 +38,7 @@ For a step-by-step run:
 |---|---|
 | `bash` | Copies `configs/bash/.bashrc` to `~/.bashrc`, keeping a timestamped backup. The config uses `$HOME` instead of a fixed username. |
 | `apps` | Enables the `i386` architecture, installs `git` and `wget` when missing, and installs oh-my-bash from its upstream installer when `~/.oh-my-bash` is absent. |
-| `theme` | Copies `graphite-amber-theme.7z` into `$XDG_DATA_HOME/gnome-mlg` (default `~/.local/share/gnome-mlg`). If 7z is installed, it backs up `~/.themes` and extracts the archive there. Otherwise it tells you where to extract it manually. |
+| `theme` | Copies `graphite-amber-theme.7z` into `$XDG_DATA_HOME/gnome-mlg` (default `~/.local/share/gnome-mlg`). If 7z is installed, it backs up `~/.themes`, extracts the bundled Graphite Amber GTK3/GTK4/Shell/Metacity theme and flat wallpaper there, and sets the GNOME theme keys with `gsettings`. Otherwise it tells you where to extract it manually. |
 
 The app step never upgrades the whole system and never runs as root. Package
 names are checked before install, so steps are safe to re-run.
@@ -71,9 +71,9 @@ Environment overrides:
 ```
 
 The verifier is read-only. It checks the repo payload, the portable bashrc
-path, the deployed bashrc, oh-my-bash, the staged theme archive and the i386
-architecture. It prints `PASS`, `WARN` or `FAIL` and exits nonzero only on
-`FAIL`.
+path, the deployed bashrc, oh-my-bash, the staged theme archive, the extracted
+Graphite Amber theme and the i386 architecture. It prints `PASS`, `WARN` or
+`FAIL` and exits nonzero only on `FAIL`.
 
 ## Layout
 
@@ -84,7 +84,7 @@ verify.sh                  read-only end-state verifier
 scripts/lib/common.sh      shared helpers (priv, logging, backups)
 configs/bash/.bashrc       portable bash config
 configs/gnome/GnomeApps.sh app prerequisite step
-graphite-amber-theme.7z                 bundled theme archive
+graphite-amber-theme.7z    bundled Graphite Amber theme archive
 AGENTS.md                  project conventions
 ```
 

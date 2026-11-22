@@ -16,8 +16,9 @@ and a bundled `graphite-amber-theme.7z` archive.
   use `$HOME`, never a hard-coded username.
 - `configs/gnome/GnomeApps.sh` installs the small package set and oh-my-bash.
   Keep package checks idempotent and escalate through `priv()`.
-- `graphite-amber-theme.7z` is the source Graphite Amber theme archive. It is staged into
-  `$GNOMEMLG_DATA_DIR` and extracted to `~/.themes` when 7z is available.
+- `graphite-amber-theme.7z` is the real Graphite Amber GTK/Shell/Metacity
+  theme archive. It is staged into `$GNOMEMLG_DATA_DIR`, extracted to
+  `~/.themes/Graphite-Amber`, and applied with `gsettings` when available.
 
 ## Conventions
 
