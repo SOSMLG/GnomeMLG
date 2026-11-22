@@ -64,6 +64,13 @@ else
     report WARN "staged-theme" "theme archive is not staged yet"
 fi
 
+THEME_DIR="$HOME/.themes/Graphite-Amber"
+if [ -f "$THEME_DIR/gtk-3.0/gtk.css" ] && [ -f "$THEME_DIR/gnome-shell/gnome-shell.css" ]; then
+    report PASS "installed-theme" "Graphite Amber is installed in $THEME_DIR"
+else
+    report WARN "installed-theme" "Graphite Amber is not extracted in $THEME_DIR yet"
+fi
+
 if command_exists dpkg && dpkg --print-foreign-architectures 2>/dev/null | grep -qx i386; then
     report PASS "i386-arch" "i386 architecture is enabled"
 else

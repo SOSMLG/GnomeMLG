@@ -84,7 +84,7 @@ run_apps() {
 run_theme() {
     local archive="$SCRIPT_DIR/graphite-amber-theme.7z"
     [ -f "$archive" ] || { log_err "missing $archive"; return 1; }
-    ask "Stage and apply the bundled graphite-amber-theme.7z?" || return 0
+    ask "Stage and extract the bundled graphite-amber-theme.7z?" || return 0
     mkdir -p "$GNOMEMLG_DATA_DIR"
     cp "$archive" "$GNOMEMLG_DATA_DIR/graphite-amber-theme.7z"
     log_ok "staged theme archive in $GNOMEMLG_DATA_DIR"
@@ -99,7 +99,24 @@ run_theme() {
     fi
     mkdir -p "$HOME/.themes"
     7z x -y -o"$HOME/.themes" "$archive" >/dev/null
-    log_ok "extracted theme archive to $HOME/.themes"
+    log_ok "extracted Graphite Amber to $HOME/.themes/Graphite-Amber"
+    if command_exists gsettings; then
+        gsettings set org.gnome.desktop.interface gtk-theme "Graphite-Amber" || \
+            log_warn "could not set the GTK theme; select Graphite-Amber manually"
+        gsettings set org.gnome.desktop.wm.preferences theme "Graphite-Amber" || \
+            log_warn "could not set the window theme; select Graphite-Amber manually"
+        if gsettings list-keys org.gnome.desktop.interface 2>/dev/null | grep -qx color-scheme; then
+            gsettings set org.gnome.desktop.interface color-scheme "prefer-dark" || \
+                log_warn "could not set the dark color scheme"
+        fi
+        if gsettings list-schemas 2>/dev/null | grep -qx org.gnome.shell.extensions.user-theme; then
+            gsettings set org.gnome.shell.extensions.user-theme name "Graphite-Amber" || \
+                log_warn "could not set the Shell theme; enable User Themes first"
+        fi
+        log_ok "applied Graphite Amber theme settings"
+    else
+        log_warn "gsettings not available; select Graphite-Amber in GNOME Tweaks"
+    fi
 }
 
 run_step() {
