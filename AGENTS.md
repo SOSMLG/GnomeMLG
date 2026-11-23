@@ -6,9 +6,9 @@ and a bundled `graphite-amber-theme.7z` archive.
 
 ## Entry points
 
-- `run.sh` is the ordered runner. Steps are `bash`, `apps`, `theme`.
-- `install.sh` is the unattended wrapper (`run.sh --full`).
-- `verify.sh` is the read-only end-state verifier. `run.sh --verify` wraps it.
+- `install.sh` is the ordered runner. Steps are `bash`, `apps`, `theme`.
+- `install.sh` is the unattended wrapper (`install.sh --full`).
+- `verify.sh` is the read-only end-state verifier. `install.sh --verify` wraps it.
 
 ## Layout
 

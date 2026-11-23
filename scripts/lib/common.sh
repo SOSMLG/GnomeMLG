@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Shared helpers for the GNOME MLG runner.
-# Sourced by run.sh and verify.sh. No side effects on source.
+# Sourced by install.sh and verify.sh. No side effects on source.
 
 GNOMEMLG_STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/gnome-mlg"
 GNOMEMLG_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/gnome-mlg"
@@ -37,7 +37,8 @@ install_file() {
     local src="$1" dst="$2"
     mkdir -p "$(dirname "$dst")"
     if [ -e "$dst" ] || [ -L "$dst" ]; then
-        local bak="${dst}.bak.$(date +%Y%m%d-%H%M%S)"
+        local bak
+        bak="${dst}.bak.$(date +%Y%m%d-%H%M%S)"
         cp -a "$dst" "$bak"
         log_info "backed up $dst to $bak"
     fi
