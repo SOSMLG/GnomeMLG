@@ -11,7 +11,7 @@ deploys a portable bash config and stages a graphite amber theme archive for a s
 | **bash** | copies `configs/bash/.bashrc` to `~/.bashrc` and keeps a timestamped backup. |
 | **apps** | enables i386, installs git and wget when missing, and installs oh-my-bash when absent. |
 | **theme** | stages `graphite-amber-theme.7z`, extracts the real Graphite Amber GTK/Shell/Metacity theme, and applies it with `gsettings` when available. |
-| **verify** | `./run.sh --verify` reads current state only. |
+| **verify** | `./install.sh --verify` reads current state only. |
 
 ## Quick start
 
@@ -27,9 +27,9 @@ verifier. Reboot or log out and back in after the bash config is deployed.
 For a step-by-step run:
 
 ```bash
-./run.sh              # prompts before each step
-./run.sh --list       # show step names
-./run.sh --verify     # audit the current state only
+./install.sh              # prompts before each step
+./install.sh --list       # show step names
+./install.sh --verify     # audit the current state only
 ```
 
 ## What it does
@@ -79,7 +79,7 @@ Graphite Amber theme and the i386 architecture. It prints `PASS`, `WARN` or
 
 ```
 install.sh                 unattended wrapper
-run.sh                     ordered step runner
+install.sh                     ordered step runner
 verify.sh                  read-only end-state verifier
 scripts/lib/common.sh      shared helpers (priv, logging, backups)
 configs/bash/.bashrc       portable bash config

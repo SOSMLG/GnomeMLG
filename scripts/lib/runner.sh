@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # shellcheck source=scripts/lib/common.sh
 source "$SCRIPT_DIR/scripts/lib/common.sh"
 
@@ -15,7 +15,7 @@ STEPS="bash apps theme"
 
 usage() {
     cat <<'EOF'
-Usage: ./run.sh [options]
+Usage: ./install.sh [options]
 
 Options:
   --list              list steps and exit
@@ -93,7 +93,8 @@ run_theme() {
         return 0
     fi
     if [ -d "$HOME/.themes" ]; then
-        local bak="$HOME/.themes.bak.$(date +%Y%m%d-%H%M%S)"
+        local bak
+        bak="$HOME/.themes.bak.$(date +%Y%m%d-%H%M%S)"
         mv "$HOME/.themes" "$bak"
         log_info "backed up $HOME/.themes to $bak"
     fi
